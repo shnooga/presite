@@ -2,10 +2,7 @@ package com.slewsoft.presite;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,9 +13,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.slewsoft.presite.fragment.BoomCalc;
 import com.slewsoft.presite.fragment.JobInfo;
 import com.slewsoft.presite.fragment.PreSite;
-import com.slewsoft.presite.model.Job;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, JobInfo.OnFragmentInteractionListener {
@@ -30,17 +27,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-/*
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -96,24 +82,21 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-
-        if (id == R.id.nav_gallery) {
-            Toast.makeText(this, "Pre Site", Toast.LENGTH_SHORT).show();
-            updateFragmentContainer(new PreSite());
-        } else if (id == R.id.nav_slideshow) {
-            Toast.makeText(this, "Boom Calc", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_manage) {
-            Toast.makeText(this, "Job", Toast.LENGTH_SHORT).show();
-            updateFragmentContainer(new JobInfo());
+        switch(item.getItemId()) {
+            case R.id.presite:
+                updateFragmentContainer(new PreSite());
+                break;
+            case R.id.boomcalc:
+                updateFragmentContainer(new BoomCalc());
+                break;
+            case R.id.jobinfo:
+                updateFragmentContainer(new JobInfo());
+                break;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
