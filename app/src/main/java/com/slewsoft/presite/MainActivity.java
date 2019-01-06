@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.slewsoft.presite.fragment.JobInfo;
 import com.slewsoft.presite.fragment.PreSite;
+import com.slewsoft.presite.model.Job;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, JobInfo.OnFragmentInteractionListener {
@@ -117,15 +118,29 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void updateFragmentContainer(Fragment fragment) {
+    private static final String JOB_INFO = "JOB_INFO";
+
+    private void updateFragmentContainer(Fragment newFragment) {
+        /*
         // In case this activity was started with special instructions from an
         // Intent, pass the Intent's extras to the fragment as arguments
-        fragment.setArguments(getIntent().getExtras());
+        newFragment.setArguments(getIntent().getExtras());
 
         // Add the fragment to the 'fragment_container' FrameLayout
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, fragment)
+                .add(R.id.fragment_container, newFragment)
                 .commit();
+*/
+
+        // Create fragment and give it an argument specifying the article it should show
+        Bundle args = new Bundle();
+//        args.putSerializable(JOB_INFO, new Job());
+//        newFragment.setArguments(args);
+
+        getSupportFragmentManager().beginTransaction()
+                                   .replace(R.id.fragment_container, newFragment)
+                                   .addToBackStack(null)
+                                   .commit();
     }
 
     @Override
