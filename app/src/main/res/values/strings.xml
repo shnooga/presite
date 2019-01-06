@@ -6,4 +6,24 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tabbed_fragments">TabbedFragments</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="edit_site_title">Site Edit</string>
+    <string name="ok">OK</string>
+    <string name="edit">Edit</string>
+    <string name="snap_pix">Pix</string>
+    <string-array name="job_status">
+        <item>Active</item>
+        <item>Paid</item>
+        <item>Closed</item>
+        <item>Billed</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

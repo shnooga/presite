@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Job Info" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Job" />
+    <EditText
+        android:id="@+id/job_name"
+        android:hint="Name"
+        android:layout_width="150dp"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address" />
+    <EditText
+        android:id="@+id/job_address"
+        android:hint="Address"
+        android:layout_width="150dp"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notes" />
+
+    <EditText
+        android:id="@+id/job_notes"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:hint="Notes" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status" />
+    <Spinner
+        android:id="@+id/job_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"/>
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:text="SELECT/Create" />
+
+</LinearLayout>
