@@ -44,7 +44,7 @@ public class PreSite extends Fragment implements OnMapReadyCallback, View.OnClic
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.map_fragment, container, false);
+        mView = inflater.inflate(R.layout.presite, container, false);
         return mView;
     }
 

@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 
 import com.slewsoft.presite.model.Job;
@@ -86,7 +85,7 @@ public class JobInfo extends Fragment implements AdapterView.OnItemSelectedListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mJob = new Job();
-        mView = inflater.inflate(R.layout.job_detail, container, false);
+        mView = inflater.inflate(R.layout.job_info, container, false);
 
         Spinner statusSpinner = mView.findViewById(R.id.job_status);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mView.getContext(), R.array.job_status, android.R.layout.simple_spinner_item);
